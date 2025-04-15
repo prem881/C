@@ -1,0 +1,60 @@
+-- โหลด Rayfield
+local Rayfield = loadstring(game:HttpGet('https://[Log in to view URL]'))()
+
+-- สร้างหน้าต่าง GUI
+local Window = Rayfield:CreateWindow({
+   Name = "Blue Lock Rivals Script",  -- ชื่อหน้าต่าง
+   Icon = 0,  -- ไอคอนในแถบด้านบน (ใช้ 0 ถ้าไม่ต้องการไอคอน)
+   LoadingTitle = "Rayfield Interface Suite",  -- ข้อความโหลด
+   LoadingSubtitle = "โดย Egoist",  -- ข้อความย่อยขณะโหลด
+   Theme = "Default",  -- ธีมของ GUI
+   DisableRayfieldPrompts = false,  -- ไม่ให้แสดงคำเตือน
+   DisableBuildWarnings = false,  -- ไม่ให้แสดงคำเตือนเกี่ยวกับเวอร์ชัน
+   ConfigurationSaving = {
+      Enabled = false,  -- ไม่บันทึกการตั้งค่า
+      FolderName = nil,  -- ไม่มีโฟลเดอร์ที่กำหนด
+      FileName = "Egoist Hub"  -- ชื่อไฟล์การตั้งค่า
+   },
+
+   Discord = {
+      Enabled = false,  -- ไม่เปิดการแจ้งเตือน Discord
+      Invite = "noinvitelink",  -- รหัสเชิญ Discord (ถ้าต้องการ)
+      RememberJoins = true  -- ไม่บังคับให้เข้าร่วม Discord ทุกครั้ง
+   },
+
+   KeySystem = false,  -- ไม่ใช้ระบบคีย์
+   KeySettings = {
+      Title = "Blue Lock Rivals Key System",  -- ชื่อระบบคีย์
+      Subtitle = "ระบบคีย์",  -- คำอธิบายระบบคีย์
+      Note = "เข้าร่วม Discord เพื่อรับคีย์!",  -- ข้อความแจ้งเตือนการรับคีย์
+      FileName = "Key",  -- ชื่อไฟล์คีย์
+      SaveKey = true,  -- บันทึกคีย์
+      GrabKeyFromSite = true,  -- ดึงคีย์จากเว็บได้ (ถ้าต้องการ)
+      Key = {"Egoist1234"}  -- คีย์ที่ยอมรับ
+   }
+})
+
+-- สร้างแท็บหลัก
+local MainTab = Window:CreateTab("หน้าแรก", nil)  -- ชื่อแท็บ
+local MainSection = MainTab:CreateSection("ฟังก์ชันหลัก")  -- ส่วนของแท็บ
+
+-- แสดงการแจ้งเตือน
+Rayfield:Notify({
+   Title = "ขอบคุณที่ใช้สคริปต์นี้!",  -- หัวข้อแจ้งเตือน
+   Content = "กราฟฟิกดีใช่ไหม?",  -- เนื้อหาแจ้งเตือน
+   Duration = 4,  -- เวลาแสดงแจ้งเตือน
+   Image = nil,  -- ไม่มีภาพ
+})
+
+-- สร้างปุ่ม "Infinite Stamina"
+local Button = MainTab:CreateButton({
+   Name = "สแตมิน่าถาวร",  -- ชื่อปุ่ม
+   Callback = function()
+        local args = {
+            [1] = 0/0  -- ใช้ค่า 0/0 เพื่อทำให้เกิดสแตมิน่าถาวร
+        }
+
+        -- ส่งคำขอลดสแตมิน่า
+        game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("StaminaService"):WaitForChild("RE"):WaitForChild("DecreaseStamina"):FireServer(unpack(args))
+   end,
+})
