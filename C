@@ -1,5 +1,5 @@
 -- โหลด Rayfield
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/prem881/C/main/someScript.lua'))()
+local Rayfield = loadstring(game:HttpGet('https://github.com/prem881/C/tree/main'))()
 -- สร้างหน้าต่าง GUI
 local Window = Rayfield:CreateWindow({
    Name = "Blue Lock Rivals Script",  -- ชื่อหน้าต่าง
